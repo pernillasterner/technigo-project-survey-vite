@@ -1,0 +1,48 @@
+{
+  "questions": [
+    {
+      "id": 0,
+      "question": "What is your nickname?",
+      "inputType": "input field"
+    },
+    {
+      "id": 1,
+      "question": "What are your favorite colors?",
+      "inputType": "input field"
+    },
+    {
+      "id": 2,
+      "question": "Do you think pineapple looks good on a pizza?",
+      "inputType": "radio button",
+      "option": [
+        {
+          "text": "Yes",
+          "value": true
+        },
+        {
+          "text": "No",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What’s your sign?",
+      "inputType": "select option",
+      "option": [
+        "aquarius",
+        "pisces",
+        "aries",
+        "taurus",
+        "gemini",
+        "cancer",
+        "leo",
+        "virgo",
+        "libra",
+        "scorpio",
+        "sagittarius",
+        "capricorn"
+      ]
+    }
+  ]
+}
