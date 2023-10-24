@@ -1,4 +1,5 @@
-import { FormBody } from "./components/Form/Form";
+import { MultiStepForm } from "./components/MultiStepForm/MultiStepForm";
+import formData from "./data.json";
 
 /**
  * Need to send this data to form
@@ -9,9 +10,7 @@ import { FormBody } from "./components/Form/Form";
  */
 
 export const App = () => {
-  return (
-    <div className="form">
-      <FormBody />
-    </div>
-  );
+  const questions = formData.questions;
+
+  return <div className="form">{<MultiStepForm questions={questions} />}</div>;
 };

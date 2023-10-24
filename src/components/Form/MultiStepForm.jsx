@@ -1,4 +1,10 @@
-export const FormBody = () => {
+export const FormBody = ({ questions }) => {
+  console.log(questions);
+
+  questions.map((data) => {
+    console.log(data);
+  });
+
   return (
     <div className="form-body">
       <div className="form-title">
@@ -19,9 +25,8 @@ export const FormBody = () => {
               <input
                 id="id"
                 className="f-input"
-                disabled="disabled"
                 placeholder="Nickname"
-                type="text"
+                type="name"
               />
             </div>
           </div>
