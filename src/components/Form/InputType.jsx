@@ -1,15 +1,23 @@
-export const InputType = ({ updateFormData, value }) => {
-  const inputType = (e) => updateFormData("id", e.target.value);
+export const InputType = ({
+  updateFormData,
+  value,
+  questionId,
+  placeholder,
+  label,
+}) => {
+  const inputType = (e) => {
+    updateFormData(questionId, e.target.value);
+  };
 
   return (
     <div className="input-field">
-      <label>Nickname:</label>
+      <label>{label}</label>
       <input
-        id="id"
+        // id="id"
         type="text"
         className="f-input"
-        placeholder="Nickname"
-        value={value}
+        placeholder={placeholder}
+        value={value || ""}
         onChange={inputType}
       />
     </div>
