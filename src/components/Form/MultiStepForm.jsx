@@ -37,27 +37,29 @@ export const MultiStepForm = ({ questions }) => {
       </div>
       {/* Move this to component QuestionWrapper */}
       {/* First question using input field */}
-      {questions.map((data, index) => (
-        <div className="question-wrapper" key={index}>
-          <div className="question">
-            <div className="question-info">
-              <span className="question-order">{data.id + 1}. </span>
-              <div className="question-title-wrapper">
-                <p>{data.question}</p>
-              </div>
-            </div>
-            <div className="question-body">
-              {data.type === "input" && (
-                // Här behöver jag skicka in
-                <InputType
-                  value={formData.id}
-                  updateFormData={updateFormData}
-                />
-              )}
+
+      <div className="question-wrapper">
+        <div className="question">
+          <div className="question-info">
+            <span className="question-order">{currentQuestion.id + 1}. </span>
+            <div className="question-title-wrapper">
+              <p>{currentQuestion.question}</p>
             </div>
           </div>
+          <div className="question-body">
+            {currentQuestion.type === "input" && (
+              // Här behöver jag skicka in
+              <InputType
+                value={formData[currentQuestion.id]}
+                updateFormData={(value) =>
+                  updateFormData(currentQuestion.id, value)
+                }
+              />
+            )}
+          </div>
         </div>
-      ))}
+      </div>
+
       <div className="button-wrapper">
         {/* if currenstep is bigger than 0 then show button*/}
         {currentStep > 0 && <button onClick={handlePrevStep}>Previous</button>}
