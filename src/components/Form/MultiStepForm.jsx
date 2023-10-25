@@ -1,37 +1,46 @@
-export const FormBody = ({ questions }) => {
-  console.log(questions);
+import { useState } from "react";
+import { InputType } from "./InputType";
+// import { FavoriteColor } from "./FavoriteColor";
 
-  questions.map((data) => {
-    console.log(data);
-  });
+// Defining multi step component
+export const MultiStepForm = ({ questions }) => {
+  // State to store form data
+  const [formData, setFormData] = useState({});
 
+  const updateFormData = (field, value) => {
+    setFormData((values) => ({ ...values, [field]: value }));
+  };
+  console.log(formData);
   return (
-    <div className="form-body">
+    <form className="form-body">
       <div className="form-title">
         <h1>🧊 Welcome to the IceBreaker Quiz 🧊</h1>
       </div>
       {/* Move this to component QuestionWrapper */}
       {/* First question using input field */}
-      <div className="question-wrapper">
-        <div className="question">
-          <div className="question-info">
-            <span className="question-order">1. </span>
-            <div className="question-title-wrapper">
-              <p>What is your nickname?</p>
+      {questions.map((data, index) => (
+        <div className="question-wrapper" key={index}>
+          <div className="question">
+            <div className="question-info">
+              <span className="question-order">{data.id + 1}. </span>
+              <div className="question-title-wrapper">
+                <p>{data.question}</p>
+              </div>
             </div>
-          </div>
-          <div className="question-body">
-            <div className="input-field">
-              <input
-                id="id"
-                className="f-input"
-                placeholder="Nickname"
-                type="name"
-              />
+            <div className="question-body">
+              {data.type === "input" && (
+                // H'r behöver jag skicka in
+                <InputType
+                  value={formData.id}
+                  updateFormData={updateFormData}
+                />
+              )}
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      ))}
+
+      <button type="submit">Send</button>
+    </form>
   );
 };
