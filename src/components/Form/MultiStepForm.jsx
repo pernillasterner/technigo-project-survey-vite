@@ -26,6 +26,10 @@ export const MultiStepForm = ({ questions }) => {
     console.log("prev step");
   };
 
+  // Get the current question based on the current step
+  const currentQuestion = questions[currentStep];
+  console.log(currentQuestion);
+
   return (
     <form className="form-body">
       <div className="form-title">
