@@ -4,13 +4,28 @@ import { InputType } from "./InputType";
 
 // Defining multi step component
 export const MultiStepForm = ({ questions }) => {
-  // State to store form data
+  // State to store form data in an object
   const [formData, setFormData] = useState({});
+  // State to check current step and set default values to 0
+  const [currentStep, setCurrentStep] = useState(0);
+  console.log(currentStep);
 
   const updateFormData = (field, value) => {
     setFormData((values) => ({ ...values, [field]: value }));
   };
-  console.log(formData);
+
+  const handleNextStep = () => {
+    setCurrentStep((currentStep) => currentStep + 1);
+
+    console.log("next step");
+  };
+
+  const handlePrevStep = () => {
+    setCurrentStep((currentStep) => currentStep - 1);
+
+    console.log("prev step");
+  };
+
   return (
     <form className="form-body">
       <div className="form-title">
@@ -29,7 +44,7 @@ export const MultiStepForm = ({ questions }) => {
             </div>
             <div className="question-body">
               {data.type === "input" && (
-                // H'r behöver jag skicka in
+                // Här behöver jag skicka in
                 <InputType
                   value={formData.id}
                   updateFormData={updateFormData}
@@ -39,8 +54,16 @@ export const MultiStepForm = ({ questions }) => {
           </div>
         </div>
       ))}
-
-      <button type="submit">Send</button>
+      <div className="button-wrapper">
+        {/* if currenstep is bigger than 0 then show button*/}
+        {currentStep > 0 && <button onClick={handlePrevStep}>Previous</button>}
+        {currentStep < questions.length - 1 && (
+          <button onClick={handleNextStep}>Next</button>
+        )}
+      </div>
+      {currentStep === questions.length - 1 && (
+        <button type="submit">Send</button>
+      )}
     </form>
   );
 };
