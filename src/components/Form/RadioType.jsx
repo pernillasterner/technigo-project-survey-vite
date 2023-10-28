@@ -11,7 +11,7 @@ export const RadioType = ({
 
   console.log(options);
   return (
-    <div className="radio-column">
+    <div className="radio-wrapper">
       {options &&
         options.map((option) => (
           <div className="input-choice" key={option.value}>
