@@ -1,5 +1,5 @@
-import { MultiStepForm } from "./components/MultiStepForm/MultiStepForm";
-import formData from "./data.json";
+import { MultiStepForm } from "./components/Form/MultiStepForm";
+import formData from "./icebreaker-questions.json";
 
 /**
  * Need to send this data to form

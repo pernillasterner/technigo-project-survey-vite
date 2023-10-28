@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": 0,
+      "label": "What is your nickname?",
+      "placeholder": "placeholder",
+      "type": "input"
+    },
+    {
+      "id": 1,
+      "label": "What is your favorite color?",
+      "placeholder": "placeholder",
+      "type": "input"
+    },
+    {
+      "id": 2,
+      "label": "Do you think pineapple looks good on a pizza?",
+      "placeholder": "placeholder",
+      "type": "radio",
+      "options": [
+        {
+          "text": "Yes",
+          "value": true
+        },
+        {
+          "text": "No",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "What’s your sign?",
+      "placeholder": "placeholder",
+      "type": "dropdown",
+      "options": [
+        "aquarius",
+        "pisces",
+        "aries",
+        "taurus",
+        "gemini",
+        "cancer",
+        "leo",
+        "virgo",
+        "libra",
+        "scorpio",
+        "sagittarius",
+        "capricorn"
+      ]
+    }
+  ]
+}
