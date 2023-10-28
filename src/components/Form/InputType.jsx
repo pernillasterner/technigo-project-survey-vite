@@ -10,10 +10,10 @@ export const InputType = ({
   };
 
   return (
-    <div className="input-field">
-      <label>{label}</label>
+    <div className="input-wrapper">
+      <label htmlFor={questionId}>Description of passing in a name.</label>
       <input
-        // id="id"
+        id={questionId}
         type="text"
         className="f-input"
         placeholder={placeholder}
