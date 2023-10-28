@@ -11,10 +11,10 @@ export const RadioType = ({
 
   console.log(options);
   return (
-    <div className="radio-wrapper">
+    <div className="radioWrapper">
       {options &&
         options.map((option) => (
-          <div className="input-choice" key={option.value}>
+          <div className="inputChoice" key={option.value}>
             <label className="i-radio">
               <input
                 type="radio"
@@ -22,10 +22,10 @@ export const RadioType = ({
                 value={option.text}
                 onChange={radioType}
               />
-              <span className="radio-button">
-                <i className="before-radio"></i>
+              <span className="radioButton">
+                <i className="beforeRadio"></i>
               </span>
-              <p className="label-item">{option.text}</p>
+              <p className="labelItem">{option.text}</p>
             </label>
           </div>
         ))}
