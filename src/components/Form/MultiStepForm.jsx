@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { InputType } from "./InputType";
+import { RadioType } from "./RadioType";
 
 export const MultiStepForm = ({ questions }) => {
   // State to store form data in an object
@@ -11,33 +12,28 @@ export const MultiStepForm = ({ questions }) => {
     setFormData((values) => ({ ...values, [field]: value }));
   };
 
+  /** Handle Next and Previous Buttons */
   const handleNextStep = () => {
-    console.log("Before Next Step:", currentStep);
     if (currentStep < questions.length - 1) setCurrentStep(currentStep + 1);
-    console.log("After Next Step:", currentStep);
   };
-
   const handlePrevStep = () => {
-    console.log("Before Prev Step:", currentStep);
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
     }
-    console.log("After Prev Step:", currentStep);
   };
 
   // Get the current question based on the current step
-  console.log("Current Step:", currentStep);
   const currentQuestion = questions[currentStep];
-
+  console.log(currentQuestion);
   return (
     <div className="form-body">
       <div className="form-title">
         <h1>🧊 Welcome to the IceBreaker Quiz 🧊</h1>
       </div>
-      <div className="question-wrapper">
+      <form className="question-wrapper">
         <div className="question">
           <div className="question-info">
-            <span className="question-order">{currentQuestion.id + 1} </span>
+            <span className="question-order">{currentQuestion.id + 1}. </span>
             <div className="question-title-wrapper">
               <p>{currentQuestion.label}</p>
             </div>
@@ -52,16 +48,19 @@ export const MultiStepForm = ({ questions }) => {
                 placeholder={currentQuestion.placeholder}
                 label={currentQuestion.label}
               />
-
-              // <InputType
-              //   value={formData.value}s
-              //   updateFormData={updateFormData}
-              //   // questionId={currentQuestion.id}
-              // />
+            )}
+            {currentQuestion.type === "radio" && (
+              <RadioType
+                value={formData[currentQuestion.id]}
+                updateFormData={updateFormData}
+                questionId={currentQuestion.id}
+                label={currentQuestion.label}
+                options={currentQuestion.options}
+              />
             )}
           </div>
         </div>
-      </div>
+      </form>
       <div className="button-wrapper">
         {currentStep > 0 && <button onClick={handlePrevStep}>Previous</button>}
 
