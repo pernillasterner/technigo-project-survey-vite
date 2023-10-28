@@ -1,5 +1,5 @@
 import { MultiStepForm } from "./components/Form/MultiStepForm";
-import formData from "./icebreaker-questions.json";
+import IceBreakerData from "./icebreaker-questions.json";
 
 /**
  * Need to send this data to form
@@ -10,7 +10,7 @@ import formData from "./icebreaker-questions.json";
  */
 
 export const App = () => {
-  const questions = formData.questions;
+  const questions = IceBreakerData.questions;
 
   return <div className="form">{<MultiStepForm questions={questions} />}</div>;
 };

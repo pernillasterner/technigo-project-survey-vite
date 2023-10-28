@@ -4,14 +4,12 @@ export const DropdownType = ({
   updateFormData,
   value,
   questionId,
-  label,
   placeholder,
   options,
 }) => {
   const [selectedValue, setSelectedValue] = useState("");
 
   const dropdownType = (selectedValue) => {
-    console.log(selectedValue);
     updateFormData(questionId, selectedValue);
     setSelectedValue(selectedValue);
   };
@@ -30,11 +28,14 @@ export const DropdownType = ({
       >
         <div className="inputWrapper">
           <div className="clickLayer"></div>
-          <input
-            className="f-select"
-            type="text"
-            placeholder={selectedValue || placeholder}
-          />
+          {/* Add selected value as placeholder */}
+          <label>
+            <input
+              className="f-select"
+              type="text"
+              placeholder={selectedValue || placeholder}
+            />
+          </label>
           <i className="i-icon">
             <svg
               width="24"

@@ -1,15 +1,8 @@
-export const RadioType = ({
-  updateFormData,
-  value,
-  questionId,
-  label,
-  options,
-}) => {
+export const RadioType = ({ updateFormData, value, questionId, options }) => {
   const radioType = (e) => {
     updateFormData(questionId, e.target.value);
   };
 
-  console.log(options);
   return (
     <div className="radioWrapper">
       {options &&

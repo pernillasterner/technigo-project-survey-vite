@@ -55,7 +55,6 @@ export const MultiStepForm = ({ questions }) => {
                 value={formData[currentQuestion.id]}
                 updateFormData={updateFormData}
                 questionId={currentQuestion.id}
-                label={currentQuestion.label}
                 options={currentQuestion.options}
               />
             )}
@@ -64,7 +63,6 @@ export const MultiStepForm = ({ questions }) => {
                 value={formData[currentQuestion.id]}
                 updateFormData={updateFormData}
                 questionId={currentQuestion.id}
-                label={currentQuestion.label}
                 placeholder={currentQuestion.placeholder}
                 options={currentQuestion.options}
               />

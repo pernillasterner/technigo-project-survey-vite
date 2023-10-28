@@ -31,21 +31,21 @@
     {
       "id": 3,
       "label": "What’s your sign?",
-      "placeholder": "placeholder",
+      "placeholder": "Please select",
       "type": "dropdown",
       "options": [
-        "aquarius",
-        "pisces",
-        "aries",
-        "taurus",
-        "gemini",
-        "cancer",
-        "leo",
-        "virgo",
-        "libra",
-        "scorpio",
-        "sagittarius",
-        "capricorn"
+        "♒ aquarius",
+        "♓ pisces",
+        "♈ aries",
+        "♉ taurus",
+        "♊ gemini",
+        "♊ cancer",
+        "♌ leo",
+        "♍ virgo",
+        "♎ libra",
+        "♏ scorpio",
+        "♐ sagittarius",
+        "♑ capricorn"
       ]
     }
   ]
