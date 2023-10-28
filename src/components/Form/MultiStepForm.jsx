@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { InputType } from "./InputType";
 import { RadioType } from "./RadioType";
+import { DropdownType } from "./DropdownType";
 
 export const MultiStepForm = ({ questions }) => {
   // State to store form data in an object
@@ -55,6 +56,16 @@ export const MultiStepForm = ({ questions }) => {
                 updateFormData={updateFormData}
                 questionId={currentQuestion.id}
                 label={currentQuestion.label}
+                options={currentQuestion.options}
+              />
+            )}
+            {currentQuestion.type === "dropdown" && (
+              <DropdownType
+                value={formData[currentQuestion.id]}
+                updateFormData={updateFormData}
+                questionId={currentQuestion.id}
+                label={currentQuestion.label}
+                placeholder={currentQuestion.placeholder}
                 options={currentQuestion.options}
               />
             )}
