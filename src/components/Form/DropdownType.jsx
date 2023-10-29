@@ -6,8 +6,10 @@ export const DropdownType = ({
   questionId,
   placeholder,
   options,
+  setSelectedValue,
+  selectedValue,
 }) => {
-  const [selectedValue, setSelectedValue] = useState("");
+  // const [selectedValue, setSelectedValue] = useState("");
 
   const dropdownType = (selectedValue) => {
     updateFormData(questionId, selectedValue);
@@ -28,7 +30,6 @@ export const DropdownType = ({
       >
         <div className="inputWrapper">
           <div className="clickLayer"></div>
-          {/* Add selected value as placeholder */}
           <label>
             <input
               className="f-select"
@@ -55,9 +56,11 @@ export const DropdownType = ({
           <ul className="optionWrapper">
             <div className="optionWrapperLayout">
               {options &&
-                options.map((option) => (
-                  <li className="option" key={option}>
-                    <span onClick={() => dropdownType(option)}>{option}</span>
+                options.map((option, index) => (
+                  <li className="option" key={option.text || option}>
+                    <span onClick={() => dropdownType(option.text || option)}>
+                      {option.text || option}
+                    </span>
                   </li>
                 ))}
             </div>

@@ -8,6 +8,7 @@ export const MultiStepForm = ({ questions }) => {
   const [formData, setFormData] = useState({});
   // State to check current step and set default values to 0
   const [currentStep, setCurrentStep] = useState(0);
+  const [selectedValue, setSelectedValue] = useState("");
 
   const updateFormData = (field, value) => {
     setFormData((values) => ({ ...values, [field]: value }));
@@ -16,16 +17,19 @@ export const MultiStepForm = ({ questions }) => {
   /** Handle Next and Previous Buttons */
   const handleNextStep = () => {
     if (currentStep < questions.length - 1) setCurrentStep(currentStep + 1);
+    setSelectedValue("");
   };
+
   const handlePrevStep = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
     }
+    setSelectedValue("");
   };
 
   // Get the current question based on the current step
   const currentQuestion = questions[currentStep];
-  console.log(currentQuestion);
+
   return (
     <div className="form-body">
       <div className="form-title">
@@ -65,21 +69,29 @@ export const MultiStepForm = ({ questions }) => {
                 questionId={currentQuestion.id}
                 placeholder={currentQuestion.placeholder}
                 options={currentQuestion.options}
+                setSelectedValue={setSelectedValue}
+                selectedValue={selectedValue}
               />
             )}
           </div>
         </div>
       </form>
-      <div className="button-wrapper">
-        {currentStep > 0 && <button onClick={handlePrevStep}>Previous</button>}
 
-        {currentStep < questions.length - 1 && (
+      <div className="button-wrapper">
+        {(currentQuestion.hasSubquestions || currentStep > 0) && (
+          <button onClick={handlePrevStep}>Previous</button>
+        )}
+
+        {(currentQuestion.hasSubquestions ||
+          currentStep < questions.length - 1) && (
           <button onClick={handleNextStep}>Next</button>
         )}
+
+        {!currentQuestion.hasSubquestions &&
+          currentStep === questions.length - 1 && (
+            <button type="submit">Send</button>
+          )}
       </div>
-      {currentStep === questions.length - 1 && (
-        <button type="submit">Send</button>
-      )}
     </div>
   );
 };
