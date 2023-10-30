@@ -6,10 +6,17 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      // Output CSS with hashed filenames
       output: {
         chunkFileNames: "assets/[name]-[hash].js",
-        entryFileNames: "assets/[name]-[hash].css", // Adjust the naming pattern as needed
+        entryFileNames: "assets/[name]-[hash].css",
+      },
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Provide the path to your main SCSS file
+        additionalData: `@import "@/src/assets/styles/index.scss";`,
       },
     },
   },
