@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./DropdownType.scss";
 
 export const DropdownType = ({
   updateFormData,

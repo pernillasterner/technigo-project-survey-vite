@@ -1,3 +1,5 @@
+import "./RadioType.scss";
+
 export const RadioType = ({ updateFormData, value, questionId, options }) => {
   const radioType = (e) => {
     updateFormData(questionId, e.target.value);

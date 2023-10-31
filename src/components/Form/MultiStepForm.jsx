@@ -1,3 +1,4 @@
+import "./MultiStepForm.scss";
 import { useState } from "react";
 import { InputType } from "./InputType";
 import { RadioType } from "./RadioType";

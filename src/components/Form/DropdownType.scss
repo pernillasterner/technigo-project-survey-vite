@@ -9,11 +9,11 @@
   .inputWrapper {
     position: relative;
     .f-select {
-      border-bottom: 1px solid $violet;
+      border-bottom: 1px solid #9013fe;
       border-top: 1px solid #ececec;
       border-top-right-radius: 0;
       border-top-left-radius: 0;
-      border-color: $violet;
+      border-color: #9013fe;
       box-shadow: 1px 1px 9px 0 rgba(0, 0, 0, 0.04);
       cursor: inherit;
       color: #131212;
@@ -47,7 +47,7 @@
   .optionWrapper {
     // border-top-right-radius: 0;
     // border-top-left-radius: 0;
-    border: 1.5px solid $violet;
+    border: 1.5px solid #9013fe;
     z-index: 9999;
     background-color: rgba(255, 255, 255, 0.68);
     position: absolute;
