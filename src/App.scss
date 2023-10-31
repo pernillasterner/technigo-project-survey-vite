@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&family=Roboto:wght@400;500;700&display=swap");
 
-/* COLORS */
-$black: #000;
-$white: #fff;
-$violet: #9013fe;
-
-/* PASTELS */
-$pastel_blue: #a2d5db;
-$pastel_pink: #eeb2b5;
-$pastel_violet: #b99dc6;
-$pastel_yellow: #faf7c2;
-
 * {
   margin: 0;
   padding: 0;
@@ -39,7 +28,7 @@ body {
   // transition-delay: 0s;
 
   &::before {
-    background-image: url("../../../src/assets/background-img.png");
+    background-image: url("./assets/background-img.png");
     background-size: cover;
     position: fixed;
     filter: brightness(100%);
