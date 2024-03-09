@@ -1,0 +1,18 @@
+header {
+  max-width: 2560px;
+  margin: 0 auto;
+  height: clamp(200px, 50vw, 400px);
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    @media (max-width: 767px) {
+      font-size: clamp(1.2rem, 6vw, 3rem);
+    }
+  }
+}
