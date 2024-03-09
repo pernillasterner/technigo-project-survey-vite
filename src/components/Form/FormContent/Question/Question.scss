@@ -1,0 +1,14 @@
+.question__header {
+  text-align: center;
+
+  .id,
+  .title {
+    color: var(--clr-primary);
+    font-size: 30px;
+  }
+
+  .id {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+}

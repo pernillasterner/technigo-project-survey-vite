@@ -1,0 +1,37 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is your favorite mood-boosting activity?",
+      "type": "input",
+      "name": "mood-boosting",
+      "options": []
+    },
+    {
+      "id": 2,
+      "question": "Does music make you happy?",
+      "type": "radio",
+      "options": [
+        {
+          "option": "Yes, absolutely",
+          "value": true
+        },
+        {
+          "option": "No, I like the silence",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is your go-to happy song?",
+      "type": "select",
+      "options": [
+        "Regnet by Ana Diaz",
+        "Love On by Selena Gomez",
+        "Mirage byt OneRepublic",
+        "Angel by Massive Attack"
+      ]
+    }
+  ]
+}

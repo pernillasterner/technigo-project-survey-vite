@@ -1,0 +1,17 @@
+.form__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .form__container {
+    margin: var(--general-padding) 0;
+    padding: var(--general-padding) 0;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid lightcoral;
+  }
+}

@@ -89,3 +89,13 @@ p {
 ul li {
   list-style: none;
 }
+
+button {
+  outline: none;
+  border-radius: 6px;
+  background-color: lightgray;
+  color: var(--clr-white);
+  border: 1px solid var(--clr-black);
+  font-size: 1.1rem;
+  padding: var(--general-smaller-padding);
+}
