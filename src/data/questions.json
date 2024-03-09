@@ -4,6 +4,7 @@
       "id": 1,
       "question": "What is your favorite mood-boosting activity?",
       "type": "input",
+      "name": "mood-boosting",
       "options": []
     },
     {
