@@ -1,3 +1,5 @@
+import "./Question.scss";
+
 export const Question = ({ id, question }) => {
   return (
     <div className="question__header">
