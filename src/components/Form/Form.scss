@@ -1,0 +1,26 @@
+.form__wrapper {
+  display: flex;
+  justify-content: center;
+
+  // Question Header
+  .question__container {
+    margin: var(--general-padding) 0;
+    max-width: 500px;
+
+    .question__header {
+      text-align: center;
+
+      .id,
+      .title {
+        color: var(--clr-primary);
+        font-size: 30px;
+      }
+
+      .id {
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+    }
+    // End of Question Header
+  }
+}
