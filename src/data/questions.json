@@ -20,6 +20,17 @@
           "value": false
         }
       ]
+    },
+    {
+      "id": 3,
+      "question": "What is your go-to happy song?",
+      "type": "select",
+      "options": [
+        "Regnet by Ana Diaz",
+        "Love On by Selena Gomez",
+        "Mirage byt OneRepublic",
+        "Angel by Massive Attack"
+      ]
     }
   ]
 }
