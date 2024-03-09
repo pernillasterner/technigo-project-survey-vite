@@ -1,0 +1,25 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is your favorite mood-boosting activity?",
+      "type": "input",
+      "options": []
+    },
+    {
+      "id": 2,
+      "question": "Does music make you happy?",
+      "type": "radio",
+      "options": [
+        {
+          "option": "Yes, absolutely",
+          "value": true
+        },
+        {
+          "option": "No, I like the silence",
+          "value": false
+        }
+      ]
+    }
+  ]
+}
