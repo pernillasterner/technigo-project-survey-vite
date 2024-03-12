@@ -6,7 +6,6 @@ export const Input = ({ id, name, onInputChange }) => {
   const handleChange = (e) => {
     // Save value in state
     setValue(e.target.value);
-    console.log(e.target.value);
     // Pass the value to parent function
     onInputChange(id, e.target.value);
   };

@@ -4,13 +4,14 @@
       "id": 1,
       "question": "What is your favorite mood-boosting activity?",
       "type": "input",
-      "name": "mood-boosting",
+      "name": "moodBoosting",
       "options": []
     },
     {
       "id": 2,
       "question": "Does music make you happy?",
       "type": "radio",
+      "name": "musicPreference",
       "options": [
         {
           "option": "Yes, absolutely",
