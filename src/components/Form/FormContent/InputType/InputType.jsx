@@ -1,5 +1,6 @@
 import "./InputType.scss";
 import { Input } from "./InputTypes/Input";
+import { Radio } from "./InputTypes/Radio";
 
 export const InputType = ({ id, type, options, name, onInputChange }) => {
   console.log(type, options);
@@ -11,7 +12,14 @@ export const InputType = ({ id, type, options, name, onInputChange }) => {
         return <Input id={id} name={name} onInputChange={onInputChange} />;
       case "radio":
         console.log("Radio component");
-        break;
+        return (
+          <Radio
+            id={id}
+            name={name}
+            onInputChange={onInputChange}
+            options={options}
+          />
+        );
       case "select":
         console.log("Select component");
         break;

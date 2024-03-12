@@ -6,21 +6,30 @@ import { Button } from "./FormContent/Button/Button";
 import { InputType } from "./FormContent/InputType/InputType";
 
 export const Form = () => {
-  const [questionId, setQuestionId] = useState(1);
+  const [step, setStep] = useState(1);
+  // Save all answers in object
   const [answers, setAnswers] = useState({});
 
   const onInputChange = (id, value) => {
+    // I need to save the value in the answers object
     console.log(value);
+    setAnswers((prevAnswers) => ({
+      ...prevAnswers,
+      [id]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(answers);
+    // Move to next question
+    setStep(step + 1);
   };
 
+  console.log(answers);
   // Pass form props and render the form
   const renderForm = questions.map(({ id, question, type, options, name }) =>
-    questionId === id ? (
+    step === id ? (
       <form key={id} className="form__container" onSubmit={handleSubmit}>
         <>
           {/* question container */}
