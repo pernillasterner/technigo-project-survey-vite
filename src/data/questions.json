@@ -27,6 +27,7 @@
       "id": 3,
       "question": "What is your go-to happy song?",
       "type": "select",
+      "name": "goToHappySong",
       "options": [
         "Regnet by Ana Diaz",
         "Love On by Selena Gomez",
