@@ -1,6 +1,7 @@
 import "./InputType.scss";
 import { Input } from "./InputTypes/Input";
 import { Radio } from "./InputTypes/Radio";
+import { Select } from "./InputTypes/Select";
 
 export const InputType = ({ id, type, options, name, onInputChange }) => {
   console.log(type, options);
@@ -22,7 +23,14 @@ export const InputType = ({ id, type, options, name, onInputChange }) => {
         );
       case "select":
         console.log("Select component");
-        break;
+        return (
+          <Select
+            id={id}
+            name={name}
+            onInputChange={onInputChange}
+            options={options}
+          />
+        );
       default:
         return <div>Unsupported type</div>;
     }
