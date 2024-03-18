@@ -1,5 +1,5 @@
 import "./InputType.scss";
-import { Input } from "./InputTypes/Input";
+import { Text } from "./InputTypes/Text";
 import { Radio } from "./InputTypes/Radio";
 import { Select } from "./InputTypes/Select";
 
@@ -8,9 +8,9 @@ export const InputType = ({ id, type, options, name, onInputChange }) => {
 
   const renderInputType = () => {
     switch (type) {
-      case "input":
+      case "text":
         console.log("Input component");
-        return <Input id={id} name={name} onInputChange={onInputChange} />;
+        return <Text id={id} name={name} onInputChange={onInputChange} />;
       case "radio":
         console.log("Radio component");
         return (

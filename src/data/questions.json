@@ -2,38 +2,81 @@
   "questions": [
     {
       "id": 1,
-      "question": "What is your favorite mood-boosting activity?",
-      "type": "input",
-      "name": "moodBoosting",
-      "options": []
-    },
-    {
-      "id": 2,
-      "question": "Does music make you happy?",
+      "question": "Are you satisfied with your current job?",
       "type": "radio",
-      "name": "musicPreference",
+      "name": "questionOne",
       "options": [
         {
           "option": "Yes, absolutely",
           "value": true
         },
         {
-          "option": "No, I like the silence",
+          "option": "No, not at the moment",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Are you satisfied with your current role and responsibilities?",
+      "type": "radio",
+      "name": "questionTwo",
+      "options": [
+        {
+          "option": "Yes, absolutely",
+          "value": true
+        },
+        {
+          "option": "No, not at the moment",
           "value": false
         }
       ]
     },
     {
       "id": 3,
-      "question": "What is your go-to happy song?",
-      "type": "select",
-      "name": "goToHappySong",
+      "question": "Do you feel valued and appreciated by your team and organization?",
+      "type": "radio",
+      "name": "questionThree",
       "options": [
-        "Regnet by Ana Diaz",
-        "Love On by Selena Gomez",
-        "Mirage byt OneRepublic",
-        "Angel by Massive Attack"
+        {
+          "option": "Yes, absolutely",
+          "value": true
+        },
+        {
+          "option": "No, not at the moment",
+          "value": false
+        }
       ]
+    },
+    {
+      "id": 4,
+      "question": "Are you provided with sufficient opportunities for professional growth and development?",
+      "type": "radio",
+      "name": "questionFour",
+      "options": [
+        {
+          "option": "Yes, absolutely",
+          "value": true
+        },
+        {
+          "option": "No, not at the moment",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Do you feel motivated and engaged in your work? If not, what factors contribute to your lack of motivation?",
+      "type": "text",
+      "name": "questionFive",
+      "options": []
+    },
+    {
+      "id": 6,
+      "question": "What is your preferred mode of transportation to work?",
+      "type": "select",
+      "name": "questionSix",
+      "options": ["Car", "Public transportation", "Bicycle", "Walking", "Other"]
     }
   ]
 }

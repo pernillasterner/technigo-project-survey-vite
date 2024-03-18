@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const Input = ({ id, name, onInputChange }) => {
+export const Text = ({ id, name, onInputChange }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (e) => {
