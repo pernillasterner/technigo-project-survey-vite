@@ -2,11 +2,13 @@ import "./Form.scss";
 import { useState } from "react";
 import { questions } from "../../data/questions.json";
 import { Question } from "./FormContent/Question/Question";
-import { Button } from "./FormContent/Button/Button";
-import { InputType } from "./FormContent/InputType/InputType";
+import { Button } from "../UIElements/Button/Button";
+import { InputType } from "../UIElements/InputType/InputType";
+import { Summery } from "./FormContent/Summery/Summery";
 
 export const Form = () => {
   const [step, setStep] = useState(1);
+  const [showSummery, setShowSummery] = useState(false);
   // Save all answers in object
   const [answers, setAnswers] = useState({});
 
@@ -27,6 +29,7 @@ export const Form = () => {
   };
 
   console.log(answers);
+
   // Pass form props and render the form
   const renderForm = questions.map(({ id, question, type, options, name }) =>
     step === id ? (
@@ -46,6 +49,8 @@ export const Form = () => {
           <Button />
         </>
       </form>
+    ) : step === questions.length ? (
+      <Summery answers={answers} />
     ) : null
   );
 
