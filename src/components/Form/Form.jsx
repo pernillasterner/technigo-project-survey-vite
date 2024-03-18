@@ -6,14 +6,12 @@ import { Button } from "../UIElements/Button/Button";
 import { InputType } from "../UIElements/InputType/InputType";
 import { Summery } from "./FormContent/Summery/Summery";
 
-export const Form = () => {
-  const [step, setStep] = useState(1);
+export const Form = ({ step }) => {
   // Save all answers in object
   const [answers, setAnswers] = useState({});
 
   const onInputChange = (id, value) => {
     // I need to save the value in the answers object
-    console.log(value);
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
       [id]: value,
@@ -22,12 +20,9 @@ export const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(answers);
     // Move to next question
     setStep(step + 1);
   };
-
-  console.log(answers);
 
   // Pass form props and render the form
   const renderForm = questions.map(({ id, question, type, options, name }) =>
@@ -45,7 +40,7 @@ export const Form = () => {
             onInputChange={onInputChange}
           />
           {/* button */}
-          <Button />
+          <Button step={step} />
         </>
       </form>
     ) : null
@@ -54,5 +49,9 @@ export const Form = () => {
   // Only show summery if this condition is true
   const showSummery = Object.keys(answers).length === questions.length;
 
-  return <section className="form__wrapper">{showSummery ? <Summery answers={answers}/> : renderForm}</section>;
+  return (
+    <section className="form__wrapper">
+      {showSummery ? <Summery answers={answers} /> : renderForm}
+    </section>
+  );
 };

@@ -6,10 +6,7 @@ export const Summery = ({ answers }) => {
   return (
     <div>
       {answers &&
-        Object.keys(answers).map((key) => (
-
-          <p key={key}>{answers[key]}</p>
-        ))}
+        Object.keys(answers).map((key) => <p key={key}>{answers[key]}</p>)}
     </div>
   );
 };

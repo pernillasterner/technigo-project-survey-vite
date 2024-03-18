@@ -1,0 +1,9 @@
+button {
+  border-radius: 6px;
+  background-color: var(--clr-button-bg);
+  color: var(--clr-button-text);
+  border: 1px solid var(--clr-white);
+  font-size: 1.1rem;
+  padding: var(--general-smaller-padding);
+  cursor: pointer;
+}

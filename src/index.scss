@@ -13,6 +13,10 @@
   --clr-text: #333;
   --clr-red-light: hsl(360, 71%, 66%);
 
+  // --clr-button-bg: #967f57;
+  --clr-button-bg: #568a91;
+  --clr-button-text: white;
+
   --general-large-padding: 100px;
   --general-padding: 35px;
   --general-smaller-padding: 20px;
@@ -88,14 +92,4 @@ p {
 
 ul li {
   list-style: none;
-}
-
-button {
-  outline: none;
-  border-radius: 6px;
-  background-color: lightgray;
-  color: var(--clr-white);
-  border: 1px solid var(--clr-black);
-  font-size: 1.1rem;
-  padding: var(--general-smaller-padding);
 }
