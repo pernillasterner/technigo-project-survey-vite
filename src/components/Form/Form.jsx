@@ -8,7 +8,6 @@ import { Summery } from "./FormContent/Summery/Summery";
 
 export const Form = () => {
   const [step, setStep] = useState(1);
-  const [showSummery, setShowSummery] = useState(false);
   // Save all answers in object
   const [answers, setAnswers] = useState({});
 
@@ -49,10 +48,11 @@ export const Form = () => {
           <Button />
         </>
       </form>
-    ) : step === questions.length ? (
-      <Summery answers={answers} />
     ) : null
   );
 
-  return <section className="form__wrapper">{renderForm}</section>;
+  // Only show summery if this condition is true
+  const showSummery = Object.keys(answers).length === questions.length;
+
+  return <section className="form__wrapper">{showSummery ? <Summery answers={answers}/> : renderForm}</section>;
 };

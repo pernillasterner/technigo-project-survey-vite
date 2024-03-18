@@ -3,6 +3,7 @@ import { useState } from "react";
 export const Select = ({ id, name, onInputChange, options }) => {
   const [value, setValue] = useState("");
   console.log(options, name);
+
   const handleChange = (e) => {
     // Save value in state
     setValue(e.target.value);
