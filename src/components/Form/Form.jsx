@@ -25,32 +25,33 @@ export const Form = ({ step }) => {
   };
 
   // Pass form props and render the form
-  const renderForm = questions.map(({ id, question, type, options, name }) =>
-    step === id ? (
-      <form key={id} className="form__container" onSubmit={handleSubmit}>
-        <>
-          {/* question container */}
-          <Question id={id} question={question} />
-          {/* input type */}
-          <InputType
-            id={id}
-            type={type}
-            options={options}
-            name={name}
-            onInputChange={onInputChange}
-          />
-          {/* button */}
-          <Button step={step} />
-        </>
-      </form>
-    ) : null
+  const renderForm = questions.map(
+    ({ id, question, type, options, name, imgUrl }) =>
+      step === id ? (
+        <form key={id} className="form__container" onSubmit={handleSubmit}>
+          <>
+            {/* question container */}
+            <Question id={id} question={question} imgUrl={imgUrl} />
+
+            {/* input type */}
+            <InputType
+              id={id}
+              type={type}
+              options={options}
+              name={name}
+              onInputChange={onInputChange}
+              step={step}
+            />
+          </>
+        </form>
+      ) : null
   );
 
   // Only show summery if this condition is true
   const showSummery = Object.keys(answers).length === questions.length;
 
   return (
-    <section className="form__wrapper">
+    <section className="section__wrapper">
       {showSummery ? <Summery answers={answers} /> : renderForm}
     </section>
   );

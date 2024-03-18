@@ -5,6 +5,8 @@
       "question": "Are you satisfied with your current job?",
       "type": "radio",
       "name": "questionOne",
+      "imgUrl": "/assets/question-images/matthew-sleeper-Spdu7YT1O00-unsplash.jpg",
+      "imgAlt": "Outdoor image",
       "options": [
         {
           "option": "Yes, absolutely",
