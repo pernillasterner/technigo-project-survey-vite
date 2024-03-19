@@ -5,6 +5,8 @@
       "question": "Are you satisfied with your current job?",
       "type": "radio",
       "name": "questionOne",
+      "imgUrl": "/assets/question-images/matthew-sleeper-Spdu7YT1O00-unsplash.jpg",
+      "imgAlt": "Outdoor image",
       "options": [
         {
           "option": "Yes, absolutely",
@@ -21,6 +23,8 @@
       "question": "Are you satisfied with your current role and responsibilities?",
       "type": "radio",
       "name": "questionTwo",
+      "imgUrl": "/assets/question-images/manuel-meurisse-QHeAAc3y76Y-unsplash.jpg",
+      "imgAlt": "Outdoor image",
       "options": [
         {
           "option": "Yes, absolutely",
@@ -37,6 +41,8 @@
       "question": "Do you feel valued and appreciated by your team and organization?",
       "type": "radio",
       "name": "questionThree",
+      "imgUrl": "assets/question-images/fabio-comparelli-uq2E2V4LhCY-unsplash.jpg",
+      "imgAlt": "Outdoor image",
       "options": [
         {
           "option": "Yes, absolutely",
@@ -53,6 +59,8 @@
       "question": "Are you provided with sufficient opportunities for professional growth and development?",
       "type": "radio",
       "name": "questionFour",
+      "imgUrl": "/assets/question-images/x-N4QTBfNQ8Nk-unsplash.jpg",
+      "imgAlt": "Outdoor image",
       "options": [
         {
           "option": "Yes, absolutely",
@@ -69,6 +77,8 @@
       "question": "Do you feel motivated and engaged in your work? If not, what factors contribute to your lack of motivation?",
       "type": "text",
       "name": "questionFive",
+      "imgUrl": "/assets/question-images/julentto-photography-CIuakYIjadc-unsplash.jpg",
+      "imgAlt": "Outdoor image",
       "options": []
     },
     {
@@ -76,6 +86,8 @@
       "question": "What is your preferred mode of transportation to work?",
       "type": "select",
       "name": "questionSix",
+      "imgUrl": "/assets/question-images/logan-weaver-lgnwvr-LHDQawgNS_I-unsplash.jpg",
+      "imgAlt": "Outdoor image",
       "options": ["Car", "Public transportation", "Bicycle", "Walking", "Other"]
     }
   ]

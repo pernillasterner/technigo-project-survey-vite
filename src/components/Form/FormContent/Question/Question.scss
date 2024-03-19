@@ -1,14 +1,36 @@
 .question__header {
   text-align: center;
+  position: relative;
+  width: 50%;
+  overflow: hidden;
 
-  .q-id,
-  .title {
-    color: var(--clr-primary);
-    font-size: 30px;
+  img {
+    height: 100vh;
+    object-fit: cover;
   }
 
-  .id {
-    font-size: 2.5rem;
-    font-weight: 500;
+  .question-wrapper {
+    padding: var(--general-padding);
+    background-color: rgba(64, 66, 66, 0.53);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    .q-id,
+    .title {
+      color: var(--clr-white);
+      font-size: 30px;
+    }
+
+    .id {
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
   }
 }
