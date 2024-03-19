@@ -20,7 +20,7 @@ export const Radio = ({ id, name, onInputChange, options }) => {
             <input
               type="radio"
               name={name}
-              value={option.value}
+              value={option.option}
               onChange={handleChange}
             />
           </label>
