@@ -18,10 +18,8 @@ export const InputType = ({
   const renderInputType = () => {
     switch (type) {
       case "text":
-        console.log("Input component");
         return <Text id={id} name={name} onInputChange={onInputChange} />;
       case "radio":
-        console.log("Radio component");
         return (
           <Radio
             id={id}
@@ -31,7 +29,6 @@ export const InputType = ({
           />
         );
       case "select":
-        console.log("Select component");
         return (
           <Select
             id={id}
@@ -48,8 +45,6 @@ export const InputType = ({
   return (
     <div className="options-wrapper">
       <div className="options-container"> {renderInputType()}</div>
-
-      {/* button */}
       <Button step={step} onClick={onClick} />
     </div>
   );

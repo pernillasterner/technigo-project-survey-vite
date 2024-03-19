@@ -29,7 +29,7 @@ export const Form = ({ step, onClick }) => {
       step === id ? (
         <form key={id} className="form__container" onSubmit={handleSubmit}>
           <>
-            {/* question container */}
+            {/* questions */}
             <Question id={id} question={question} imgUrl={imgUrl} />
 
             {/* input type */}
@@ -46,6 +46,8 @@ export const Form = ({ step, onClick }) => {
         </form>
       ) : null
   );
+
+  console.log(answers);
 
   // Only show summery if this condition is true
   const showSummery = Object.keys(answers).length === questions.length;
