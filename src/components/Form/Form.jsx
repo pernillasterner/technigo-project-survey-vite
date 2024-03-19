@@ -2,11 +2,10 @@ import "./Form.scss";
 import { useState } from "react";
 import { questions } from "../../data/questions.json";
 import { Question } from "./FormContent/Question/Question";
-import { Button } from "../UIElements/Button/Button";
 import { InputType } from "../UIElements/InputType/InputType";
 import { Summery } from "./FormContent/Summery/Summery";
 
-export const Form = ({ step }) => {
+export const Form = ({ step, onClick }) => {
   // Save all answers in object
   const [answers, setAnswers] = useState({});
 
@@ -41,6 +40,7 @@ export const Form = ({ step }) => {
               name={name}
               onInputChange={onInputChange}
               step={step}
+              onClick={onClick}
             />
           </>
         </form>

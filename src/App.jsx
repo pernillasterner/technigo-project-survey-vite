@@ -15,7 +15,7 @@ export const App = () => {
       {step === 0 ? (
         <Header step={step} onClick={handleButtonClick} />
       ) : (
-        <Form step={step} />
+        <Form step={step} onClick={handleButtonClick} />
       )}
     </>
   );

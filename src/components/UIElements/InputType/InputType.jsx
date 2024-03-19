@@ -4,7 +4,15 @@ import { Radio } from "./InputTypes/Radio";
 import { Select } from "./InputTypes/Select";
 import { Button } from "../Button/Button";
 
-export const InputType = ({ id, type, options, name, onInputChange, step }) => {
+export const InputType = ({
+  id,
+  type,
+  options,
+  name,
+  onInputChange,
+  step,
+  onClick,
+}) => {
   console.log(type, options);
 
   const renderInputType = () => {
@@ -42,7 +50,7 @@ export const InputType = ({ id, type, options, name, onInputChange, step }) => {
       <div className="options-container"> {renderInputType()}</div>
 
       {/* button */}
-      <Button step={step} />
+      <Button step={step} onClick={onClick} />
     </div>
   );
 };
