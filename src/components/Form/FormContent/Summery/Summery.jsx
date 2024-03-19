@@ -1,12 +1,13 @@
 import "./Summery.scss";
 
-export const Summery = ({ answers }) => {
-  console.log("detta är summery");
-  console.log(answers);
+export const Summery = ({ answers, questions }) => {
   return (
-    <div>
-      {answers &&
-        Object.keys(answers).map((key) => <p key={key}>{answers[key]}</p>)}
+    <div className="summery-container">
+      <div className="summery-answers">
+        <h2>Thank for you!</h2>
+        {answers &&
+          Object.keys(answers).map((key) => <p key={key}>{answers[key]}</p>)}
+      </div>
     </div>
   );
 };
