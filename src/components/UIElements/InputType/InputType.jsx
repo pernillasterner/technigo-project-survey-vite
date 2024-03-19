@@ -11,10 +11,9 @@ export const InputType = ({
   name,
   onInputChange,
   step,
-  onClick,
+  errorMessage,
+  handleNextStep,
 }) => {
-  console.log(type, options);
-
   const renderInputType = () => {
     switch (type) {
       case "text":
@@ -44,8 +43,11 @@ export const InputType = ({
 
   return (
     <div className="options-wrapper">
-      <div className="options-container"> {renderInputType()}</div>
-      <Button step={step} onClick={onClick} />
+      <div className="options-container">{renderInputType()}</div>
+      <Button step={step} onClick={handleNextStep} />
+      {errorMessage && (
+        <p>Oops, you need to answer the question before moving on.</p>
+      )}
     </div>
   );
 };

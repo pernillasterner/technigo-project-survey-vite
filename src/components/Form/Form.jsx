@@ -5,29 +5,43 @@ import { Question } from "./FormContent/Question/Question";
 import { InputType } from "../UIElements/InputType/InputType";
 import { Summery } from "./FormContent/Summery/Summery";
 
-export const Form = ({ step, onClick }) => {
+export const Form = ({ step, onClick, setStep }) => {
   // Save all answers in object
+  const [errorMessage, setErrorMessage] = useState(false);
   const [answers, setAnswers] = useState({});
+  const [statusValue, setStatusValue] = useState("");
 
+  // Function that handles incoming input
   const onInputChange = (id, value) => {
-    // I need to save the value in the answers object
+    // Set states for err message and incomming target value
+    setErrorMessage(false);
+    setStatusValue(value);
+
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
       [id]: value,
     }));
+    setErrorMessage(false);
   };
 
-  const handleSubmit = (e) => {
+  // Function that will add step when clicking on button
+  const handleNextStep = (e) => {
     e.preventDefault();
-    // Move to next question
-    setStep(step + 1);
+
+    if (statusValue !== "") {
+      setStep(step + 1);
+      setErrorMessage(false);
+      setStatusValue("");
+    } else {
+      setErrorMessage(true);
+    }
   };
 
   // Pass form props and render the form
   const renderForm = questions.map(
     ({ id, question, type, options, name, imgUrl }) =>
       step === id ? (
-        <form key={id} className="form__container" onSubmit={handleSubmit}>
+        <form key={id} className="form__container">
           <>
             {/* questions */}
             <Question id={id} question={question} imgUrl={imgUrl} />
@@ -41,13 +55,14 @@ export const Form = ({ step, onClick }) => {
               onInputChange={onInputChange}
               step={step}
               onClick={onClick}
+              errorMessage={errorMessage}
+              setStep={setStep}
+              handleNextStep={handleNextStep}
             />
           </>
         </form>
       ) : null
   );
-
-  console.log(answers);
 
   // Only show summery if this condition is true
   const showSummery = Object.keys(answers).length === questions.length;
