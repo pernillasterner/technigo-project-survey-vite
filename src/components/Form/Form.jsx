@@ -69,7 +69,11 @@ export const Form = ({ step, onClick, setStep }) => {
 
   return (
     <section className="section__wrapper">
-      {showSummery ? <Summery answers={answers} /> : renderForm}
+      {showSummery ? (
+        <Summery answers={answers} questions={questions} />
+      ) : (
+        renderForm
+      )}
     </section>
   );
 };
